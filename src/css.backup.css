@@ -1,0 +1,360 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Raleway:wght@400;700&display=swap');
+
+/* Reset and Base Styles */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background-color: black;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+/* App Container */
+.app {
+  text-align: center;
+  overflow-y: auto;
+  height: 100%;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.demo-button {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 20px; /* Adjusted for desktop view */
+}
+
+.demo-button:hover {
+  background: white;
+  color: black;
+}
+
+.logo {
+  height: 60px;
+}
+
+/* Section 1 - Hero Section */
+.hero-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-leaf-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-leaf {
+  width: 300px;
+  opacity: 0.7;
+}
+
+.hero-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-subtitle {
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+}
+
+.hero-description {
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  max-width: 600px;
+  margin-top: 20px;
+  text-align: center;
+  color: #d0d0d0;
+}
+
+/* Section 2 - Platform Section */
+.platform-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0 20px;
+}
+
+.text-container {
+  text-align: center;
+  margin-bottom: 50px;
+  z-index: 2;
+  position: relative;
+}
+
+.platform-heading {
+  font-family: 'Raleway', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.platform-heading span {
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+}
+
+.platform-description {
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  max-width: 800px;
+  margin: 20px auto;
+  line-height: 1.8;
+  color: #d0d0d0;
+}
+
+.platform-description .highlight {
+  font-weight: 600;
+  color: white;
+}
+
+/* Mobile Image Container */
+.image-container {
+  position: absolute;
+  bottom: -25%; /* Ensures partial visibility in Section 3 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  width: 100%;
+}
+
+.mobile-image {
+  width: 500px;
+  max-width: 100%;
+  opacity: 1;
+  transition: all 0.8s ease-in-out; /* Smooth animation */
+}
+
+/* Section 3 - New Era Section */
+.new-era-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0 20px;
+}
+
+.new-era-heading {
+  font-family: 'Raleway', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.new-era-heading .small-text {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #d0d0d0;
+}
+
+.new-era-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 20px;
+  color: #d0d0d0;
+}
+
+/* Section 5 - Image Only Section */
+.image-only-section {
+  height: 100vh; /* Full screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black; /* Matches the overall theme */
+  position: relative;
+}
+
+.image-only-section .mobile-image {
+  width: 500px; /* Default desktop size */
+  max-width: 100%;
+  opacity: 1;
+  transition: all 0.8s ease-in-out; /* Smooth animation */
+}
+
+/* Section 6 - Subscribe Section */
+.subscribe-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  position: relative;
+}
+
+.subscribe-container {
+  text-align: center;
+}
+
+.subscribe-text {
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #555; /* Light grey background for the input field */
+  border-radius: 30px;
+  width: 100%; /* Full width of the container */
+  max-width: 600px;
+  height: 50px;
+  padding: 0 10px; /* Added padding for better spacing */
+}
+
+.subscribe-input {
+  flex: 1;
+  padding: 0 20px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background: none;
+  border-radius: 30px 0 0 30px; /* Rounded left corners */
+}
+
+.subscribe-input::placeholder {
+  color: #d0d0d0;
+}
+
+.subscribe-button {
+  padding: 10px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: white;
+  background: #333; /* Dark grey background for the button */
+  border: none;
+  cursor: pointer;
+  border-radius: 0 30px 30px 0; /* Rounded right corners */
+  transition: all 0.3s ease;
+}
+
+.subscribe-button:hover {
+  background: #616161;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .logo {
+    height: 50px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .hero-leaf {
+    width: 200px;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+    max-width: 90%;
+  }
+
+  .platform-heading {
+    font-size: 2.5rem;
+  }
+
+  .platform-description {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .mobile-image {
+    width: 300px; /* Adjusted for smaller screens */
+    bottom: -20%; /* Adjust visibility on mobile */
+  }
+
+  .new-era-heading {
+    font-size: 2.5rem;
+  }
+
+  .new-era-description {
+    font-size: 1rem;
+  }
+
+  .image-only-section .mobile-image {
+    width: 300px; /* Mobile size for Section 5 image */
+  }
+
+  /* Section 6 adjustments for mobile */
+  .subscribe-form {
+    width: 90%; /* Adjust form width for mobile */
+    height: 40px; /* Reduced height for mobile */
+  }
+
+  .subscribe-input {
+    font-size: 0.9rem;
+    padding: 0 10px; /* Adjusted padding for smaller screens */
+  }
+
+  .subscribe-button {
+    font-size: 0.9rem;
+    padding: 8px 15px; /* Reduced padding for the button */
+  }
+
+  .subscribe-text {
+    font-size: 1.2rem;
+  }
+}

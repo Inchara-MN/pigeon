@@ -1,0 +1,137 @@
+/* Import DM Sans from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+/* Reset and Base Styles */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  font-family: 'DM Sans', sans-serif;
+  color: white;
+  background-color: black;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+/* App Container */
+.app {
+  text-align: center;
+  overflow-y: auto;
+  height: 100%;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.demo-button {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.demo-button:hover {
+  background: white;
+  color: black;
+}
+
+.logo {
+  height: 60px;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative; /* Enables absolute positioning for the mobile image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hero Leaf Container */
+.hero-leaf-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-leaf {
+  width: 300px;
+  opacity: 0.7;
+}
+
+/* Hero Title */
+.hero-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 5rem; /* Increased text size */
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  position: absolute;
+  top: -10px; /* Already moved further up */
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 3rem; /* Increased text size */
+  font-weight: 400;
+}
+
+/* Mobile Image (Phone) */
+.mobile-image {
+  width: 1000px; /* Increased size */
+  max-width: 150%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo {
+    height: 50px;
+  }
+
+  .demo-button {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+
+  .hero-leaf {
+    width: 200px;
+  }
+
+  .hero-title {
+    font-size: 4rem; /* Increased for mobile */
+  }
+
+  .hero-subtitle {
+    font-size: 2.5rem; /* Increased for mobile */
+  }
+
+  .mobile-image {
+    width: 500px;
+  }
+}
