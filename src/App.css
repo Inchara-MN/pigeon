@@ -8,74 +8,84 @@ body, html, #root {
   font-family: 'DM Sans', sans-serif;
   color: white;
   background-color: black;
-  overflow-x: hidden;
+  overflow: hidden; /* Prevent default scrolling */
   height: 100%;
 }
 
 /* App Container */
 .app {
   text-align: center;
-  overflow-y: auto;
   height: 100%;
 }
 
 /* Header */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.demo-button {
-  background: transparent;
-  color: white;
-  border: 1px solid white;
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.demo-button:hover {
-  background: white;
-  color: black;
-}
+    display: flex;
+    justify-content: space-between; /* Space between logo and button */
+    align-items: center;
+    padding: 10px 20px; /* Increase padding to bring the elements inside */
+    position: absolute;
+    top: 0;
+    left: 0; /* Align header to the left */
+    right: 0; /* Align header to the right */
+    width: calc(100% - 120px); /* Adjusted width to respect padding */
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+  
+  /* Logo Styling */
+  .logo {
+    height: 50px; /* Adjusted for better fit */
+    margin-left: 10px; /* Add some space from the edge */
+  }
+  
+  /* Demo Button Styling */
+  .demo-button {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 8px 16px; /* Adjusted padding for better fit */
+    border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 10px; /* Add some space from the edge */
+  }
+  
+  .demo-button:hover {
+    background: white;
+    color: black;
+  }
+  
 
 .logo {
   height: 60px;
 }
 
-/* Hero Section */
+/* Hero Section (fixed so the frame does not move) */
 .hero-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-  position: relative;
+  overflow: hidden;
 }
 
 /* Hero Content */
 .hero-content {
-  position: relative; /* Enables absolute positioning for the mobile image */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-/* Hero Leaf Container */
+/* Stage 1 – Original Text Container */
 .hero-leaf-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
 }
 
 .hero-leaf {
@@ -83,28 +93,91 @@ body, html, #root {
   opacity: 0.7;
 }
 
-/* Hero Title */
 .hero-title {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 5rem; /* Increased text size */
+  font-size: 5rem;
   font-weight: 700;
   margin: 0;
   line-height: 1.2;
-  position: absolute;
-  top: -10px; /* Already moved further up */
-  text-align: center;
-  z-index: 1;
+  margin-top: -60%;
 }
 
 .hero-subtitle {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 3rem; /* Increased text size */
+  font-size: 3rem;
   font-weight: 400;
 }
 
-/* Mobile Image (Phone) */
+/* New Text Container (moves up with phone) */
+.new-text-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  text-align: center;
+  max-width: 80%;
+  bottom: 5%;
+}
+
+/* Make sure new text moves up */
+.new-text-moving-up {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  text-align: center;
+  max-width: 80%;
+}
+
+/* Stage 2 – Hero Text Container */
+.stage2-text-container {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.stage2-title {
+  font-size: 5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  margin-top: 10%;
+}
+
+.stage2-subtitle {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+/* Stage 3 – Hero Text Container */
+.stage3-text-container {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.stage3-title {
+  font-size: 5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  margin-top: 10%;
+}
+
+.stage3-subtitle {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+/* Mobile Image (applies to all stages) */
 .mobile-image {
-  width: 1000px; /* Increased size */
+  position: absolute;
+  left: 35%;
+  top: 10%;
+  transform: translate(-50%, -50%);
+  width: 400px;
   max-width: 150%;
 }
 
@@ -119,19 +192,189 @@ body, html, #root {
     font-size: 12px;
   }
 
+  .hero-leaf-container {
+    top: 10%;
+  }
+
   .hero-leaf {
     width: 200px;
   }
 
   .hero-title {
-    font-size: 4rem; /* Increased for mobile */
+    font-size: 4rem;
   }
 
   .hero-subtitle {
-    font-size: 2.5rem; /* Increased for mobile */
+    font-size: 2.5rem;
   }
 
   .mobile-image {
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%);
     width: 500px;
   }
+
+  .new-text-container {
+    font-size: 1.2rem;
+  }
+
+  .new-text-moving-up {
+    font-size: 1.2rem;
+  }
+
+  .stage2-text-container {
+    top: 10%;
+  }
+
+  .stage2-title {
+    font-size: 4rem;
+  }
+
+  .stage2-subtitle {
+    font-size: 2.5rem;
+  }
+
+  .stage3-text-container {
+    top: 10%;
+  }
+
+  .stage3-title {
+    font-size: 4rem;
+  }
+
+  .stage3-subtitle {
+    font-size: 2.5rem;
+  }
 }
+/* Stage 4 - Stay Up-to-Date Section */
+/* Stage 4 - Stay Up-to-Date Section */
+.sign-in {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    text-align: center;
+    color: white;
+    gap: 30px;
+    width: 100%;
+    max-width: 900px; /* Increased container width */
+    height: 100vh; /* Center the container vertically and horizontally */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Title Styling */
+  .stay-up-to-date {
+    font-size: 1.8rem; /* Match font size to the image */
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  
+  /* Input and Button Container */
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    background-color: #4a4a4a; /* Match input background color */
+    border-radius: 25px; /* Rounded edges */
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Input Field Styling */
+  .input-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-container input {
+    width: 100%;
+    padding: 12px 20px; /* Match padding to the image */
+    font-size: 1rem; /* Font size for input text */
+    color: white;
+    background: transparent; /* Match transparent input */
+    border: none;
+    outline: none;
+  }
+  
+  .input-container input::placeholder {
+    color: #ccc; /* Placeholder text color */
+    font-size: 1rem;
+  }
+  
+  /* Subscribe Button Styling */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black; /* Ensure the button background is solid black */
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-size: 1rem; /* Font size for button text */
+    font-weight: 500;
+    color: white; /* Button text color */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none; /* Ensure no border is present */
+    outline: none; /* Remove outline on focus */
+    box-shadow: none; /* Remove shadow that might appear on click */
+  }
+  
+  .button-container:hover {
+    background: #1a1a1a; /* Slightly darker black on hover */
+    color: white; /* Ensure text color stays white */
+  }
+  
+  .button-container:focus {
+    outline: none; /* Remove focus outline */
+    box-shadow: none; /* Remove focus shadow */
+  }
+  
+  
+  
+  /* Responsive Design for Stage 4 */
+  @media (max-width: 768px) {
+    .stay-up-to-date {
+      font-size: 1.5rem;
+    }
+  
+    .content {
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+    }
+  
+    .input-container input {
+      padding: 10px 15px;
+      font-size: 0.9rem;
+    }
+  
+    .button-container {
+      padding: 10px 15px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    .stay-up-to-date {
+      font-size: 1.2rem;
+    }
+  
+    .input-container input {
+      padding: 8px 12px;
+      font-size: 0.8rem;
+    }
+  
+    .button-container {
+      padding: 8px 12px;
+      font-size: 0.8rem;
+    }
+  }
+  
